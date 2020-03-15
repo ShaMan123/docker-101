@@ -6,7 +6,7 @@ console.log(nodeVersion)
 const nodeMajorVersion = parseInt(nodeVersion.split('.')[0]);
 
 module.exports = async (req, res) => {
-
+    // not compatible with node8
     if (nodeMajorVersion <= 8) {
         res.status(500).send({ error: `Incompatible node version ${nodeVersion}` });
         return;
